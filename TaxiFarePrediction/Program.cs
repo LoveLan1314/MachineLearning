@@ -12,7 +12,7 @@ namespace TaxiFarePrediction
     {
         const string _dataPath = @".\Data\taxi-fare-test.csv";
         const string _testDataPath = @".\Data\taxi-fare-train.csv";
-        const string _modelPath = @".\Models\Model.zip";
+        const string _modelPath = @".\Data\Model.zip";
 
         static async Task Main(string[] args)
         {
@@ -20,7 +20,7 @@ namespace TaxiFarePrediction
             Evaluate(model);
 
             var prediction = model.Predict(TestTrip.Trip1);
-            Console.WriteLine("Predicted fare: {0}, actual fare; 29.5", prediction.fare_amount); ;
+            Console.WriteLine("Predicted fare: {0}, actual fare: 29.5", prediction.fare_amount);
         }
 
         private static void Evaluate(PredictionModel<TaxiTrip, TaxiTripFarePrediction> model)
